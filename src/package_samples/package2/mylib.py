@@ -1,4 +1,5 @@
 import logging
+import inspect
 
 
 logger = logging.getLogger(__name__)
@@ -16,7 +17,8 @@ def do_something():
     logger.info("do something #{}: {}".format(3, "propagate=True"))
     logger.debug("do something #{}: {}".format(4, "propagate=False"))
 
-    pass
+    print(inspect.stack()[1])
+    print(__name__)
 
 
 if __name__ == '__main__':
